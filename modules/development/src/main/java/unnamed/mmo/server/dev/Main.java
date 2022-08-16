@@ -12,6 +12,7 @@ import net.minestom.server.event.GlobalEventHandler;
 import net.minestom.server.event.player.PlayerLoginEvent;
 import net.minestom.server.event.player.PlayerSpawnEvent;
 import net.minestom.server.extras.MojangAuth;
+import net.minestom.server.extras.lan.OpenToLAN;
 import net.minestom.server.instance.Instance;
 import net.minestom.server.instance.InstanceManager;
 import net.minestom.server.instance.block.Block;
@@ -42,6 +43,7 @@ public class Main {
         MinecraftServer server = MinecraftServer.init();
 
         MojangAuth.init();
+        OpenToLAN.open();
         MinecraftServer.getConnectionManager().setPlayerProvider(PlayerImpl::new);
 
         InstanceManager instanceManager = MinecraftServer.getInstanceManager();
